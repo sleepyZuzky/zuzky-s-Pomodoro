@@ -1,19 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGear } from '@fortawesome/free-solid-svg-icons'
+import Modal from '@components/Modal/Modal';
 
 export default function Config() {
   return <section id={'configuration'}>
-    <FontAwesomeIcon icon={faGear} />
-    Settings
+    <FontAwesomeIcon icon={faGear} onClick={() => {
+      const modal: HTMLDialogElement = document.querySelector('[data-settings-modal]');
+      modal.showModal();
+    }}/>
     
-    Time (minutes)
-    pomodoro
-    short break
-    long break
-    
-    Font
-    Color
-    
-    Apply
+    <Modal header='Settings' />
   </section>
 }
