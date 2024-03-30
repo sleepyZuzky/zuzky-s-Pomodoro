@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import styles from './styles.module.css'
 
-export default function Modal({children, header}) {
+export default function Modal({header}: {header: string}) {
   return <dialog data-settings-modal className={styles.modal}>
     <section id='modal__header' className={[styles.modal__header, styles.separator].join(' ')}>
       <span>
@@ -10,8 +10,8 @@ export default function Modal({children, header}) {
       </span>
       
       <FontAwesomeIcon icon={faXmark} color={'#ccc'} className={'pointer'} onClick={() => {
-        const modal: HTMLDialogElement = document.querySelector('[data-settings-modal]');
-        modal.close();
+        const modal: HTMLDialogElement | null = document.querySelector('[data-settings-modal]');
+        if (modal !== null) modal.close();
       }}/>
     </section>
     

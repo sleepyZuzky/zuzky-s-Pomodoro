@@ -5,8 +5,8 @@ import Modal from '@components/Modal/Modal';
 export default function Config() {
   return <section id={'configuration'}>
     <FontAwesomeIcon icon={faGear} onClick={() => {
-      const modal: HTMLDialogElement = document.querySelector('[data-settings-modal]');
-      modal.showModal();
+      const modal: HTMLDialogElement | null = document.querySelector('[data-settings-modal]');
+      if (modal !== null) modal.showModal();
     }}/>
     
     <Modal header='Settings' />
