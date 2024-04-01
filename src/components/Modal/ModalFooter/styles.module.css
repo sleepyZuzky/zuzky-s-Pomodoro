@@ -1,0 +1,20 @@
+.modal__footer {
+    padding: 0 40px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-top: 32px;
+}
+
+.modal__footer button {
+    @apply text-white font-bold py-2 px-4 rounded-full;
+
+    padding: 18px 40px;
+
+    font-size: 16px;
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

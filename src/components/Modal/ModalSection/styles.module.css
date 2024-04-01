@@ -1,0 +1,33 @@
+.modal__section {
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.modal__section:not(:last-child) {
+    border-bottom: 1px solid #E3E1E1;
+}
+
+.modal__section:not(:first-child) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal__options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.modal__options span {
+    cursor: pointer;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    align-content: center;
+    text-align: center;
+}

@@ -1,0 +1,11 @@
+.modal__header {
+    font-size: 28px;
+
+    padding: 33px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #E3E1E1;
+}

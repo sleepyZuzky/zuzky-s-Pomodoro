@@ -1,45 +1,17 @@
 .modal {
+    position: relative;
+    overflow: visible;
+
     width: 540px;
 
     border-radius: 25px;
 }
 
-.modal__header {
-    font-size: 28px;
-
-    padding: 33px 40px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.modal__body {
-    padding: 24px 40px 0;
-
-    font-size: 13px;
-    font-weight: bold;
-}
-
 .timers {
-    display: flex;
-}
-
-.timers span {
-    color: #ccc;
-}
-
-.timer {
-    max-width: 33%;
+    margin-top: 22px;
 
     display: flex;
-    flex-direction: column;
-}
-
-.timer input {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 50px;
+    gap: 20px;
 }
 
 .separator {
