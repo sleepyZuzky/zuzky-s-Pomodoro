@@ -1,0 +1,21 @@
+.radio_container {
+    position: relative;
+}
+
+.radio_container label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.custom_radio {
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
