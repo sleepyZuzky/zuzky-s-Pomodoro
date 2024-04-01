@@ -9,11 +9,12 @@ export default function Chronometer () {
   const [dashOffset, setDashOffset] = useState(0);
   
   useEffect((): void => {
-    const circle: SVGCircleElement = document.getElementsByTagName('circle')[0]
-    const ratio = timer / totalTime;
-    console.log(circle.getTotalLength());
-    setDashOffset((1 - ratio) * circle.getTotalLength());
-  }, [timer]);
+    if (document.getElementsByTagName('circle').length > 0) {
+      const circle: SVGCircleElement = document.getElementsByTagName('circle')[0]
+      const ratio: number = timer / totalTime;
+      setDashOffset((1 - ratio) * circle.getTotalLength());
+    }
+  }, [timer, totalTime]);
   
   return <section id={'chronometer'}>
     <div id="outter_circle" className={styles.outer_circle}>
@@ -33,7 +34,6 @@ export default function Chronometer () {
           <span>pause</span>
         </div>
       </div>
-    
     </div>
   </section>
 }
