@@ -1,7 +1,6 @@
 import styles from './styles.module.css';
 import { useContext } from 'react';
 import { PomodoroColor, PomodoroContext, PomodoroFont } from '@providers/PomodoroProvider';
-import ActionButton from '@components/Utils/Buttons/ActionButton/ActionButton';
 
 export default function ModalFooter () {
   const {pomodoro, setPomodoro} = useContext(PomodoroContext)
@@ -28,6 +27,8 @@ export default function ModalFooter () {
   }
   
   return <section id="modal__footer" className={styles.modal__footer}>
-    <ActionButton text={'Apply'} backgroundColor={'#F87070'} cursor={'pointer'} callback={updateSettings}/>
+    <button style={{backgroundColor: '#F87070', cursor: 'pointer'}} onClick={() => updateSettings()}>
+      Apply
+    </button>
   </section>
 }

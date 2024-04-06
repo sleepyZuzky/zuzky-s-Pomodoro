@@ -1,7 +1,6 @@
 import styles from './styles.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import ActionButton from '@components/Utils/Buttons/ActionButton/ActionButton';
 
 export default function ModalHeader ({label}: {label: string}) {
   const closeModal = (): void => {
@@ -14,10 +13,8 @@ export default function ModalHeader ({label}: {label: string}) {
         {label}
       </span>
     
-    <ActionButton
-      callback={closeModal}
-      cursor={'pointer'}
-      backgroundColor={''}
-      text={<FontAwesomeIcon icon={faXmark} color={'#ccc'} className={'cursor-pointer'}/>} />
+    <button style={{cursor: 'pointer'}} onClick={() => closeModal()}>
+      {<FontAwesomeIcon icon={faXmark} color={'#ccc'} className={'cursor-pointer'}/>}
+    </button>
   </section>
 }

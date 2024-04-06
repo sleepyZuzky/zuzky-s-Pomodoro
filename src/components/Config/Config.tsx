@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGear } from '@fortawesome/free-solid-svg-icons'
-import ActionButton from '@components/Utils/Buttons/ActionButton/ActionButton';
 'use client';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
 
 export default function Config () {
   const openModal = (): void => {
@@ -10,10 +10,8 @@ export default function Config () {
   }
   
   return <section id={'configuration'}>
-    <ActionButton
-      callback={openModal}
-      backgroundColor={''}
-      cursor={'pointer'}
-      text={<FontAwesomeIcon icon={faGear} className={'cursor-pointer'}/>}/>
+    <button style={{cursor: 'pointer'}} onClick={() => openModal()}>
+      {<FontAwesomeIcon icon={faGear} className={'cursor-pointer'}/>}
+    </button>
   </section>
 }
