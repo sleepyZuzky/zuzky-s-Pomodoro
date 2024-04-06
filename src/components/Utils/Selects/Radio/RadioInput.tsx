@@ -1,16 +1,12 @@
-'use client';
-
 import styles from './styles.module.css';
 import { ChangeEvent, useEffect } from 'react';
-import { Simulate } from 'react-dom/test-utils';
-import input = Simulate.input;
 
 interface RadioType {
   options: { name: string, values: any[] },
   canHide?: boolean
 }
 
-export default function Radio ({options, canHide = false}: RadioType) {
+export default function RadioInput ({options, canHide = false}: RadioType) {
   useEffect(() => {
     const div: HTMLElement | null = document.getElementById(`radio_${options.name}`);
     const container: HTMLElement | null = div ? div.parentElement : null;
@@ -24,8 +20,12 @@ export default function Radio ({options, canHide = false}: RadioType) {
           checks.push(inputOption.checked);
         }
       }
+
+      const hasChildrens: boolean = containerChildren.length > 0;
+      const containerHasChildrens: boolean = containerChildren[0].children.length > 0;
+      const everyCheckIsFalse: boolean = checks.every((check: boolean) => !check)
       
-      if (containerChildren.length > 0 && containerChildren[0]['children'].length > 0 && checks.every((check: boolean) => !check)) {
+      if (hasChildrens && containerHasChildrens && everyCheckIsFalse) {
         const inputOption: HTMLInputElement = containerChildren[0]['children'][0] as HTMLInputElement;
         inputOption.checked = true;
         return;
@@ -74,8 +74,8 @@ export default function Radio ({options, canHide = false}: RadioType) {
   return <>
     {
       options.values.map((option) => {
-        const inputStyle = option.styles ? option.styles : '';
-        const labelStyles = option.labelStyles ? option.labelStyles : '';
+        const inputStyle = option.styles ? option.styles : {};
+        const labelStyles = option.labelStyles ? option.labelStyles : {};
         
         return <div key={`radio_${option.id}`} id={`radio_${options.name}`} className={styles.radio_container}>
           <input

@@ -1,11 +1,11 @@
 import styles from './styles.module.css';
-import { ReactElement, ReactNode, useContext } from 'react';
+import { ReactElement, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { PomodoroContext } from '@providers/PomodoroProvider';
 import ModalSection from '@components/Modal/ModalSection/ModalSection';
 import InputFields from '@components/Utils/Fields/InputFields';
-import Radio from '@components/Utils/Selects/Radio/Radio';
+import RadioInput from '@components/Utils/Selects/Radio/RadioInput';
 
 interface RadioOptionType {
   id: string,
@@ -25,9 +25,7 @@ export interface RadioOptionsType {
 }
 
 export default function ModalBody () {
-  const {pomodoro, setPomodoro} = useContext(PomodoroContext);
-  
-  const test = '';
+  const {pomodoro} = useContext(PomodoroContext);
   const checkIcon = () => <FontAwesomeIcon icon={faCheck}/>
   const inputField = (id: string, value: number) => <InputFields id={id} fieldLabel={id} fieldValue={value}/>
   const fontOptions: RadioOptionsType = {
@@ -73,11 +71,11 @@ export default function ModalBody () {
     </ModalSection>
     
     <ModalSection label={'Font'}>
-      <Radio options={{name: 'pomodoroFonts', values: []}} canHide={false}/>
+      <RadioInput options={fontOptions} canHide={false}/>
     </ModalSection>
     
     <ModalSection label={'Color'}>
-      <Radio options={{name: 'pomodoroColors', values: []}} canHide={true}/>
+      <RadioInput options={colorOptions} canHide={true}/>
     </ModalSection>
   </section>
 }
