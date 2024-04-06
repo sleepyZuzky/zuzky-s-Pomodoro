@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './styles.module.css'
 import ModalHeader from '@components/Modal/ModalHeader/ModalHeader';
 import ModalBody from '@components/Modal/ModalBody/ModalBody';

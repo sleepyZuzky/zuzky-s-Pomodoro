@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGear } from '@fortawesome/free-solid-svg-icons'
 import ActionButton from '@components/Utils/Buttons/ActionButton/ActionButton';
+'use client';
 
 export default function Config () {
   const openModal = (): void => {
