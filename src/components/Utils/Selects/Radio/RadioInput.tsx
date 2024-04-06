@@ -56,7 +56,6 @@ export default function RadioInput ({options, canHide = false}: RadioType) {
         if (child.children.length > 2) {
           const inputOption: HTMLInputElement = child.children[0] as HTMLInputElement;
           const label: HTMLElement = child.children[1] as HTMLElement;
-          const value = inputOption.nodeValue;
           
           if (label.getAttribute('data-can-hide') === 'true') {
             label.style['display'] = inputOption.checked ? 'inline-block' : 'none';
