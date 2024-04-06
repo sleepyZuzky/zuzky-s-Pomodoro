@@ -15,7 +15,7 @@ export default function RadioInput ({options, canHide = false}: RadioType) {
     
     if (containerChildren !== null) {
       for (const child of containerChildren) {
-        if (child.children.length > 2) {
+        if (child.children.length) {
           const inputOption: HTMLInputElement = child['children'][0] as HTMLInputElement;
           checks.push(inputOption.checked);
         }
@@ -32,7 +32,7 @@ export default function RadioInput ({options, canHide = false}: RadioType) {
       }
       
       for (const child of containerChildren) {
-        if (child.children.length > 2) {
+        if (child.children.length) {
           const inputOption: HTMLInputElement = child.children[0] as HTMLInputElement;
           const label: HTMLElement = child.children[1] as HTMLElement;
           
@@ -53,7 +53,7 @@ export default function RadioInput ({options, canHide = false}: RadioType) {
     
     if (container !== null) {
       for (const child of container.children) {
-        if (child.children.length > 2) {
+        if (child.children.length) {
           const inputOption: HTMLInputElement = child.children[0] as HTMLInputElement;
           const label: HTMLElement = child.children[1] as HTMLElement;
           
