@@ -1,8 +1,10 @@
+'use client';
+
 import {
   Context,
   createContext,
-  Dispatch, ReactNode,
-  SetStateAction, useEffect,
+  ReactNode,
+  useEffect,
   useState
 } from 'react';
 
