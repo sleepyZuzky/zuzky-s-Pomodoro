@@ -1,15 +1,47 @@
+'use client';
+
+import styles from './styles.module.css';
+import { useContext, useState } from 'react';
+import { PomodoroContext } from '@providers/PomodoroProvider';
+
 export default function TimerStatus () {
-  return <section id={'timer_status'} className={'flex bg-red-500 px-5 py-5 rounded-full'}>
-    <span className={'bg-yellow-600 pt-4 pb-3.5 px-6 rounded-full'}>
+  const { pomodoro, setPomodoro } = useContext(PomodoroContext);
+  const [activeBtn, setActiveBtn] = useState<string>('pomodoro')
+  
+  function toggleTimer (newTimer: string): void {
+    setActiveBtn(newTimer);
+    setPomodoro({
+      ...pomodoro,
+      currTimer: newTimer,
+    });
+  }
+  
+  return <section id={'timer_option'} className={styles.timer_option}>
+    <button className={styles.btn}
+            style={{
+              backgroundColor: activeBtn === 'pomodoro' ? '#F87070' : '',
+              color: activeBtn === 'pomodoro' ? '#1E213F' : '#D7E0FF'
+            }}
+            onClick={() => toggleTimer('pomodoro')}>
       pomodoro
-    </span>
+    </button>
     
-    <span className={'bg-yellow-600 pt-4 pb-3.5 px-6 rounded-full'}>
+    <button className={styles.btn}
+            style={{
+              backgroundColor: activeBtn === 'shortBreak' ? '#F87070' : '',
+              color: activeBtn === 'shortBreak' ? '#1E213F' : '#D7E0FF'
+            }}
+            onClick={() => toggleTimer('shortBreak')}>
       short break
-    </span>
+    </button>
     
-    <span className={'bg-yellow-600 pt-4 pb-3.5 px-6 rounded-full'}>
+    <button className={styles.btn}
+            style={{
+              backgroundColor: activeBtn === 'longBreak' ? '#F87070' : '',
+              color: activeBtn === 'longBreak' ? '#1E213F' : '#D7E0FF'
+            }}
+            onClick={() => toggleTimer('longBreak')}>
       long break
-    </span>
+    </button>
   </section>
 }

@@ -1,0 +1,8 @@
+.timer_option {
+    @apply flex px-5 py-5 rounded-full;
+    background-color: #161932;
+}
+
+.btn {
+    @apply pt-4 pb-3.5 px-6 rounded-full;
+}
