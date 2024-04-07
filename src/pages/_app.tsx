@@ -17,7 +17,7 @@ export default function App () {
         <TimerStatus/>
         <Chronometer/>
         <Config/>
-        <Modal header="Settings"/>
+        <Modal/>
       </PomodoroProvider>
     </section>
   </main>

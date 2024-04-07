@@ -28,7 +28,7 @@ export default function Chronometer () {
       clearInterval(pomodoroIntervals);
     }
     
-    const interval: number = setInterval(() => {
+    const interval: number = window.setInterval(() => {
       if (timer === 0) {
         return () => clearInterval(pomodoroIntervals);
       }
@@ -41,7 +41,7 @@ export default function Chronometer () {
       clearInterval(interval);
       setPomodoroIntervals(0);
     };
-  }, [timer, totalTime]);
+  }, [timer, totalTime, pomodoroIntervals]);
   
   useEffect(() => {
     clearInterval(pomodoroIntervals);
@@ -49,7 +49,7 @@ export default function Chronometer () {
     const newTotalTime: number = pomodoro[pomodoro.currTimer] * MINUTE;
     setTimer(newTotalTime);
     setTotalTime(newTotalTime);
-  }, [pomodoro.currTimer]);
+  }, [pomodoro, pomodoroIntervals]);
   
   function toggleChronometer (interval: number): void {
     if (chronometerRunning) {
@@ -57,7 +57,7 @@ export default function Chronometer () {
       setPomodoroIntervals(0);
       setChronometerRunning(false);
     } else {
-      const interval: number = setInterval(() => {
+      const interval: number = window.setInterval(() => {
         if (timer === 0) {
           return () => clearInterval(pomodoroIntervals);
         }

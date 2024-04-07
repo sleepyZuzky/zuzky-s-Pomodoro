@@ -17,7 +17,7 @@ interface PomodoroContextType {
   pomodoro: number,
   shortBreak: number,
   longBreak: number,
-  currTimer: string
+  currTimer: 'pomodoro' | 'shortBreak' | 'longBreak'
 }
 
 const defaultContext: PomodoroContextType = {
@@ -34,7 +34,7 @@ export const PomodoroContext: Context<{
   setPomodoro: (pomodoro: PomodoroContextType) => void
 }> = createContext({
   pomodoro: defaultContext,
-  setPomodoro: () => {},
+  setPomodoro: (pomodoro: PomodoroContextType) => {},
 });
 
 export default function PomodoroProvider ({children}: {children: ReactNode}) {

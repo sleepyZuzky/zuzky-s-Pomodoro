@@ -16,6 +16,7 @@ export default function ModalFooter () {
     const shortbreak: number | undefined = getElementById('longBreak')?.valueAsNumber;
     
     setPomodoro({
+      ...pomodoro,
       font: font ? font : 'sans-serif',
       color: color ? color : '#F87070',
       pomodoro: pomodoroTimer ? pomodoroTimer : 0,

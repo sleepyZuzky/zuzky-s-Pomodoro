@@ -6,9 +6,9 @@ import { PomodoroContext } from '@providers/PomodoroProvider';
 
 export default function TimerStatus () {
   const { pomodoro, setPomodoro } = useContext(PomodoroContext);
-  const [activeBtn, setActiveBtn] = useState<string>('pomodoro')
+  const [activeBtn, setActiveBtn] = useState<'pomodoro' | 'shortBreak' | 'longBreak'>('pomodoro')
   
-  function toggleTimer (newTimer: string): void {
+  function toggleTimer (newTimer: 'pomodoro' | 'shortBreak' | 'longBreak'): void {
     setActiveBtn(newTimer);
     setPomodoro({
       ...pomodoro,
