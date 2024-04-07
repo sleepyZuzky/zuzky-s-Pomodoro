@@ -17,6 +17,7 @@ interface PomodoroContextType {
   pomodoro: number,
   shortBreak: number,
   longBreak: number,
+  currTimer: string
 }
 
 const defaultContext: PomodoroContextType = {
@@ -24,7 +25,8 @@ const defaultContext: PomodoroContextType = {
   color: '#F87070',
   pomodoro: 25,
   shortBreak: 5,
-  longBreak: 15
+  longBreak: 15,
+  currTimer: 'pomodoro',
 }
 
 export const PomodoroContext: Context<{
