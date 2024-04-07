@@ -9,8 +9,7 @@ const SECOND: number = 1000;
 const MINUTE: number = SECOND * 60;
 
 export default function Chronometer () {
-  let interval = null;
-  const {pomodoro, setPomodoro} = useContext(PomodoroContext);
+  const {pomodoro} = useContext(PomodoroContext);
   
   const [totalTime, setTotalTime] = useState<number>(pomodoro[pomodoro.currTimer] * MINUTE);
   const [timer, setTimer] = useState<number>(totalTime);
@@ -83,11 +82,11 @@ export default function Chronometer () {
 
       <div id="chronometer_container" className={styles.chronometer}>
         <h1>
-          <span data-minutes>
+          <span data-minutes={true}>
             {new Date(timer).getMinutes().toString().padStart(2, '0')}
           </span>
           :
-          <span data-seconds>
+          <span data-seconds={true}>
             {new Date(timer).getSeconds().toString().padStart(2, '0')}
           </span>
         </h1>

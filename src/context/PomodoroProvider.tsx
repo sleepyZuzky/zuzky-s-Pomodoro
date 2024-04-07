@@ -34,7 +34,7 @@ export const PomodoroContext: Context<{
   setPomodoro: (pomodoro: PomodoroContextType) => void
 }> = createContext({
   pomodoro: defaultContext,
-  setPomodoro: (pomodoro: PomodoroContextType) => {},
+  setPomodoro: () => {},
 });
 
 export default function PomodoroProvider ({children}: {children: ReactNode}) {
