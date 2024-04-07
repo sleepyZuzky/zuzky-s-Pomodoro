@@ -10,8 +10,8 @@ export default function Config () {
   }
   
   return <section id={'configuration'}>
-    <button style={{cursor: 'pointer'}} onClick={() => openModal()}>
+    <h2 style={{color: '#D7E0FF', cursor: 'pointer'}} onClick={() => openModal()}>
       {<FontAwesomeIcon icon={faGear} className={'cursor-pointer'}/>}
-    </button>
+    </h2>
   </section>
 }

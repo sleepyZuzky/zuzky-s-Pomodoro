@@ -1,6 +1,5 @@
-
 export default function Header() {
-  return <h1>
+  return <h2 style={{color: '#D7E0FF'}}>
     pomodoro
-  </h1>
+  </h2>
 }
